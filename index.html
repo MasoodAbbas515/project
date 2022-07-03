@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student records assigment</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main">
+        <div class="pt">
+            <h2>Student Record</h2>
+            <form action="table.html" id="pt" method="Get">
+               
+                <div id="a">
+                    <label >Name:</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required > 
+                </div>
+                <div id="a">
+                    <label >Father_Name:</label>
+                    <br>
+                    <input type="text" name="Fname" id="Fname" placeholder="Enter Your Father Name" required> 
+                </div>
+                <div id="a">
+                   <label >Contact:</label>
+                   <br>
+                   <input type="number" name="contact" id="contact" placeholder="Enter Your contect number" required > 
+                </div>
+                <div id="a">
+                    <label >Institute:</label>
+                    <br>
+                    <input type="text" name="ins" id="ins" placeholder="Enter Your Institute" required > 
+                </div>
+                <div id="a">
+                    <label >Class:</label>
+                    <br>
+                    <input type="text" name="cla" id="cla" placeholder="Enter Your Class " required > 
+                </div>
+                <div id="a">
+                    <label >Semester:</label>
+                    <br>
+                    <input type="text" name="sem" id="sem" placeholder="Enter Your semester" required > 
+                </div>
+                <div id="a" >
+                <label >Gender : </label>
+                <br>
+                <input type="radio" name="gender" id="male">
+                <span id="male">Male</span> 
+                <input type="radio" name="gender" id="female">
+                <span id="female">Female</span>
+                </div>
+            
+    <div id="result information">
+        <div>
+            <h2>Result Information</h2>
+        </div>
+        <div id="b">
+            <div id="err_no_1">
+                <p> Error: Enter Correct Value</p>
+            </div>
+            <label for="lname">Subject # 1</label><br>
+            <input required type="text" name="1_name" placeholder="Subject Name..." id="1_name"><br>
+            <label >Total Marks</label><br>
+            <input type="number" data-id="1" onkeyup="validation(this)" name="1_total" id="1_total" placeholder="Subject Total Marks..."><br>
+            <label >Obtain Marks</label><br>
+            <input type="number" data-id="1" onkeyup="validation(this)" name="1_obtained" id="1_obtained" placeholder="Subject Marks..."><br><br>
+        </div>
+        <div id="b">
+            <div id="err_no_2">
+                <p>Error: Enter Correct Value</p>
+            </div>
+            <label for="lname">Subject # 2</label><br>
+            <input required type="text" name="2_name" placeholder="Subject Name..." id="2_name"><br>
+            <label >Total Marks</label><br>
+            <input type="number" data-id="2" onkeyup="validation(this)" name="2_total" id="2_total" placeholder="Subject Total Marks..."><br>
+            <label >Obtain Marks</label><br>
+            <input type="number" data-id="2" onkeyup="validation(this)" name="2_obtained" id="2_obtained" placeholder="Subject Marks..."><br><br>
+        </div>
+        <div id="b">
+            <div id="err_no_3">
+                <p>Error: Enter Correct Value</p>
+            </div>
+            <label for="lname">Subject # 3</label><br>
+            <input required type="text" name="3_name" placeholder="Subject Name..." id="3_name"><br>
+            <label >Total Marks</label><br>
+            <input type="number" data-id="3" onkeyup="validation(this)" name="3_total" id="3_total" placeholder="Subject Total Marks..."><br>
+            <label >Obtain Marks</label><br>
+            <input type="number" data-id="3" onkeyup="validation(this)" name="3_obtained" id="3_obtained" placeholder="Subject Marks..."><br><br>
+        </div>
+        <div id="b">
+            <div id="err_no_4">
+                <p>Error: Enter Correct Value</p>
+            </div>
+            <label for="lname">Subject # 4</label><br>
+            <input required type="text" name="4_name" placeholder="Subject Name..." id="4_name"><br>
+            <label >Total Marks</label><br>
+            <input type="number" data-id="4" onkeyup="validation(this)" name="4_total" id="4_total" placeholder="Subject Total Marks..."><br>
+            <label >Obtain Marks</label><br>
+            <input type="number" data-id="4" onkeyup="validation(this)" name="4_obtained" id="4_obtained" placeholder="Subject Marks..."><br><br>
+        </div >
+        <div id="b">
+            <div id="err_no_5">
+                <p>Error: Enter Correct Value</p>
+            </div>
+            <label for="lname">Subject # 5</label><br>
+            <input required type="text" name="5_name" placeholder="Subject Name..." id="5_name"><br>
+            <label >Total Marks</label><br>
+            <input type="number" data-id="5" onkeyup="validation(this)" name="5_total" id="5_total" placeholder="Subject Total Marks..."><br>
+            <label >Obtain Marks</label><br>
+            <input type="number" data-id="5" onkeyup="validation(this)" name="5_obtained" id="5_obtained" placeholder="Subject Marks..."><br><br>
+        </div >
+
+        </div>
+        <div id="a">
+            <button type="submit" href="/">Submit</button>
+            </div>
+        </form>
+    </div>
+               
+</div>
+</div>
+</body>
+<script>
+     function validation(arg) {
+                
+
+                var This_id = arg.getAttribute('data-id');
+
+                if (This_id == 1) {
+                    var total = document.getElementById('1_total').value;
+                    var Obtained = document.getElementById('1_obtained').value;
+                    var error = document.getElementById('err_no_1');
+                    if (parseInt(Obtained) > parseInt(total)) {
+                        error.classList.add('display_block');
+                    } else {
+                        error.classList.remove('display_block');
+                    }
+                }
+                if (This_id == 2) {
+                    var total = document.getElementById('2_total').value;
+                    var Obtained = document.getElementById('2_obtained').value;
+                    var error = document.getElementById('err_no_2');
+                    if (parseInt(Obtained) > parseInt(total)) {
+                        error.classList.add('display_block');
+                    } else {
+                        error.classList.remove('display_block');
+                    }
+                }
+                if (This_id == 3) {
+                    var total = document.getElementById('3_total').value;
+                    var Obtained = document.getElementById('3_obtained').value;
+                    var error = document.getElementById('err_no_3');
+                    if (parseInt(Obtained) > parseInt(total)) {
+                        error.classList.add('display_block');
+                    } else {
+                        error.classList.remove('display_block');
+                    }
+                }
+                if (This_id == 4) {
+                    var total = document.getElementById('4_total').value;
+                    var Obtained = document.getElementById('4_obtained').value;
+                    var error = document.getElementById('err_no_4');
+                    if (parseInt(Obtained) > parseInt(total)) {
+                        error.classList.add('display_block');
+                    } else {
+                        error.classList.remove('display_block');
+                    }
+                }
+                if (This_id == 5) {
+                    var total = document.getElementById('5_total').value;
+                    var Obtained = document.getElementById('5_obtained').value;
+                    var error = document.getElementById('err_no_5');
+                    if (parseInt(Obtained) > parseInt(total)) {
+                        error.classList.add('display_block');
+                    } else {
+                        error.classList.remove('display_block');
+                    }
+                }
+            }
+</script>
+</html>
